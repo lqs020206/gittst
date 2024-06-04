@@ -17,25 +17,7 @@ motionDir = {
     0: [-1, 1],
     1: [0, math.sqrt(2)],
     2: [1, 1],
-    3: [-math.sqrt(2), 0],
-    4: [0, 0],
-    5: [math.sqrt(2), 0],
-    6: [-1, -1],
-    7: [0, -math.sqrt(2)],
-    8: [1, -1],
-}
-transform = transforms.Compose([
-    transforms.Resize([360, 360]),
-    transforms.ToTensor(),
-    transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-])
-import random
-# 定义变换矩阵
-src_pts = np.array([
-    [364, 100],
-    [121, 893],
-    [1713, 908],
-    [1500, 125]
+
 ], dtype=np.float32)
 dst_pts = np.array([
     [0, 0],
