@@ -30,31 +30,7 @@ transform = transforms.Compose([
 # 定义变换矩阵
 src_pts = np.array([
     [364, 100],
-    [121, 893],
-    [1713, 908],
-    [1500, 125]
-], dtype=np.float32)
-dst_pts = np.array([
-    [0, 0],
-    [0, 360],
-    [360, 360],
-    [360, 0]
-], dtype=np.float32)
-M = cv2.getPerspectiveTransform(src_pts, dst_pts)
-
-# 读取视频
-cap = cv2.VideoCapture("D:/OneDrive - sjtu.edu.cn/桌面/视频0304/SNR_5.mp4")
-
-# 获取视频的帧率、宽度和高度
-fps = int(cap.get(cv2.CAP_PROP_FPS))
-width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
-height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
-
-# 创建VideoWriter对象
-fourcc = cv2.VideoWriter_fourcc(*'mp4v')  # 视频编码格式
-out = cv2.VideoWriter("D:/OneDrive - sjtu.edu.cn/桌面/视频0304/SNR_5bj.mp4", fourcc, fps*4, (width, height))
-
-# 创建一个Lucas-Kanade光流法的参数
+    [12
 lk_params = dict(winSize=(15, 15),
                  maxLevel=2,
                  criteria=(cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
