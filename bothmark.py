@@ -44,12 +44,7 @@ ret, first_frame = cap.read()
 gray_first_frame = cv2.cvtColor(first_frame, cv2.COLOR_BGR2GRAY)
 p0 = cv2.goodFeaturesToTrack(gray_first_frame, mask=None, maxCorners=100, qualityLevel=0.3, minDistance=7, blockSize=7)
 
-# 创建一个空白图像用于绘制光流轨迹
-mask = np.zeros_like(first_frame)
 
-while cap.isOpened():
-    ret, frame = cap.read()
-    if not ret:
         break
 
     frame2model = cv2.warpPerspective(frame, M, (360, 360))
