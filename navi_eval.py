@@ -6,15 +6,7 @@ def navi_eval(navi_path):
         以上分别代表不同的方向，其中4为停止
         9为此次未识别，保持上一次的值
         10为初始值
-    '''
 
-    navi_s = navi_path[0]
-    navi_r = navi_path[1]
-    try:
-        x_delta = navi_r[0] - navi_s[0]
-        y_delta = navi_r[1] - navi_s[1]
-    except TypeError as e:
-        print(navi_r, navi_s)
 
     if x_delta > 0:
         if y_delta > 0:
